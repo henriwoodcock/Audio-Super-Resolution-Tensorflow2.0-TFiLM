@@ -1,0 +1,7 @@
+tensorflow
+numpy
+h5py
+tqdm
+scipy
+librosa
+soundfile
