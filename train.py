@@ -5,20 +5,20 @@ import os
 import h5py
 from utils import evaluation
 
-os.environ["CUDA_VISIBLE_DEVICES"] = "0"
+os.environ["CUDA_VISIBLE_DEVICES"] = "-1"
 os.environ['TF_CPP_MIN_LOG_LEVEL'] = '3'
 
 # training parameters
-train_dataset_path = "./train.h5"
-test_dataset_path = "./test.h5"
+train_dataset_path = "train.h5"
+test_dataset_path = "test.h5"
 save_path = './'
-batch_size = 32
+batch_size = 8
 EPOCHS = 50
 lr = 3e-4
 
 # for evaluation
-in_dir_hr_test = "/path_to/test_hr/"
-in_dir_lr_test = "/path_to/test_lr/"
+in_dir_hr_test = "data/test_hr/"
+in_dir_lr_test = "data/test_lr/"
 
 if __name__ == '__main__':
 
@@ -71,15 +71,14 @@ if __name__ == '__main__':
         #     loss_min = test_loss.result()
         #     model.save_weights(save_path + 'best_model.h5')
 
-        model.save_weights(save_path + 'checkpoint.h5')
+        model.save_weights(save_path + 'checkpoint.tf')
         template = 'Epoch {}, Loss: {}, Test Loss: {}'
         print(template.format(epoch + 1,
                               train_loss.result(),
                               test_loss.result()))
 
     # final evaluation
-    model.load_weights(save_path + 'checkpoint.h5')
+    model.load_weights(save_path + 'checkpoint.tf')
     snr, lsd = evaluation(model, crop_length=8192, channel=None,
                           in_dir_hr=in_dir_hr_test, in_dir_lr=in_dir_lr_test)
     print("Final Results -- SNR: ", snr, " LSD: ", lsd)
-

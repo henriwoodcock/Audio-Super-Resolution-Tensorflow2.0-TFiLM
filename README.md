@@ -1,3 +1,18 @@
+# Changes
+
+- Docker file
+- Data .zip downloaded
+
+## How to run
+
+In docker:
+1. docker build -t audio-super-res:1.0 .
+2. docker run --rm -it audio-super-res:1.0
+
+In google colab:
+1. drag all files over to your google drive
+2. copy the notebook and edit the first cell about connecting to drive
+
 # Audio-Super-Resolution-Tensorflow2.0-TFiLM
 
 This is Tensorflow 2.0 verison of Temporal FiLM for Speech Super Resolution. 

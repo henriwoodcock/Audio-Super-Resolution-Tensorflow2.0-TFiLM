@@ -9,14 +9,14 @@ dimension = 8192                   # sequence length
 stride = 4096                      # stride length when cutting the sequence
 
 # the folder of HR audios and LR audios
-in_dir_hr_train = "/path_to/train_hr/"
-in_dir_lr_train = "/path_to/train_lr/"
-in_dir_hr_test = "/path_to/test_hr/"
-in_dir_lr_test = "/path_to/test_lr/"
+in_dir_hr_train = "data/train_hr/"
+in_dir_lr_train = "data/train_lr/"
+in_dir_hr_test = "data/test_hr/"
+in_dir_lr_test = "data/test_lr/"
 
 # the path of output .h5 file
-out_dir_train = './train.h5'
-out_dir_test = './test.h5'
+out_dir_train = 'train.h5'
+out_dir_test = 'test.h5'
 
 
 def add_data(in_dir_hr, in_dir_lr, out_dir):

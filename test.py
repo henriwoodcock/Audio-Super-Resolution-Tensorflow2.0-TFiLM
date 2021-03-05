@@ -7,8 +7,8 @@ from model.Tfilm import tfilm_net
 os.environ["CUDA_VISIBLE_DEVICES"] = "0"
 
 model_path = "./checkpoint.h5"
-in_dir_hr = "/path_to/test_hr/"
-in_dir_lr = "/path_to/test_lr/"
+in_dir_hr = "data/test_hr/"
+in_dir_lr = "data/test_lr/"
 
 lr_folder = None
 save_folder = ""
